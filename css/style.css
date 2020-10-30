@@ -1,0 +1,26 @@
+/*
+COLORS:
+
+Matte Dark Blue Grey: #3d5a80
+Matte Light Blue Grey: #98c1d9
+Powder Blue: #e0fbfc
+Pumpkin Orange: #ee6c4d
+Navy Blue/Black: #293241
+
+*/
+
+/* Universal Settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777
+}
