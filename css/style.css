@@ -57,6 +57,8 @@ body {
     left: 50%;
     /* based on the element itself */
     transform: translate(-50%, -50%);
+    /* to center the button */
+    text-align: center;
 }
 
 .heading-primary {
@@ -65,6 +67,7 @@ body {
 
     /* making sure the animation doesn't shake */
     backface-visibility: hidden;
+    margin-bottom: 60px;
 }
 
 .heading-primary-main {
@@ -91,7 +94,7 @@ body {
 @keyframes moveInLeft {
     0% {
         opacity: 0;
-        /* animate in the left direction */
+        /* animate in the left direction, X moves from left to right */
         transform: translateX(-100px);
     }
 
@@ -124,4 +127,35 @@ body {
         /* look the way that it does now */
         transform: translate(0);
     }
+}
+
+/* pseudoclass for link */
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    /* clockwise: top, right, bottom, left || top&bottom left&right || all */
+    padding: 15px 40px;
+    display: inline-block;
+    /* making a round button */
+    border-radius: 100px;
+    transition: all .2s;
+}
+
+.btn:hover {
+    /* Y moves from top to bottom */
+    transform: translateY(-3px);
+    /* (x y blur rgba (r g b alpha) - creating a shadow */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #404040;
+
 }
