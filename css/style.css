@@ -9,7 +9,7 @@ Navy Blue/Black: #293241
 
 */
 
-/* Universal Settings */
+/* Universal Selector */
 * {
     margin: 0;
     padding: 0;
@@ -23,4 +23,18 @@ body {
     font-size: 16px;
     line-height: 1.7;
     color: #777
+}
+
+.header {
+    height: 95vh;
+    background-image: linear-gradient( 
+        to right bottom, 
+        hsla(12, 83%, 62%, 0.80), 
+        hsla(214, 35%, 37%, 0.80)), 
+    url(https://images.pexels.com/photos/3811082/pexels-photo-3811082.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    background-size: cover;
+    background-position: center;
+
+    /* clockwise using x,y coordinates by percentages (or any other unit) */
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }
