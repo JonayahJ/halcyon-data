@@ -1,10 +1,10 @@
 /*
 COLORS:
 
-Matte Dark Blue Grey: #3d5a80
+Matte Dark Blue Grey: #3d5a80 (linear gradient color 2)
 Matte Light Blue Grey: #98c1d9
 Powder Blue: #e0fbfc
-Pumpkin Orange: #ee6c4d
+Pumpkin Orange: #ee6c4d (linear gradient color 1)
 Navy Blue/Black: #293241
 
 */
@@ -22,7 +22,7 @@ body {
     font-weight: 400;
     font-size: 16px;
     line-height: 1.7;
-    color: #777
+    color: #404040
 }
 
 .header {
@@ -33,8 +33,95 @@ body {
         hsla(214, 35%, 37%, 0.80)), 
     url(https://images.pexels.com/photos/3811082/pexels-photo-3811082.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
     background-size: cover;
-    background-position: center;
+    background-position: top;
+    position: relative; 
 
     /* clockwise using x,y coordinates by percentages (or any other unit) */
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.logo {
+    height: 35px;
+}
+
+.text-box {
+    position: absolute;
+    /* based on the header (parent element) */
+    top: 40%;
+    left: 50%;
+    /* based on the element itself */
+    transform: translate(-50%, -50%);
+}
+
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+
+    /* making sure the animation doesn't shake */
+    backface-visibility: hidden;
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 70px;
+    font-weight:700;
+    letter-spacing: 35px;
+
+    animation-name: moveInLeft;
+    animation-duration: 3s;
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 11px;
+
+    animation-name: moveInRight;
+    animation-duration: 3s;
+}
+
+/* Header Animation */
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        /* animate in the left direction */
+        transform: translateX(-100px);
+    }
+
+    80% {
+        /* add in a little quiver */
+        transform: translateX(10px);
+    }
+
+    100% {
+        opacity: 1;
+        /* look the way that it does now */
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        /* animate in the right direction */
+        transform: translateX(100px);
+    }
+
+    80% {
+        /* add in a little quiver */
+        transform: translateX(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        /* look the way that it does now */
+        transform: translate(0);
+    }
 }
