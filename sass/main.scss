@@ -1,0 +1,225 @@
+/*
+COLORS:
+
+Matte Dark Blue Grey: #3d5a80 (linear gradient color 2)
+Matte Light Blue Grey: #98c1d9
+Powder Blue: #e0fbfc
+Pumpkin Orange: #ee6c4d (linear gradient color 1)
+Navy Blue/Black: #293241
+
+*/
+
+$color-primary-dark: #3d5a80;
+$color-primary-light: #98c1d9;
+$color-secondary-dark: #293241;
+$color-secondary-light: #e0fbfc;
+$color-teriary: #ee6c4d;
+
+
+/* Universal Selector */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    /* font-size: 10px; */
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: #404040;
+
+    box-sizing: border-box;
+}
+
+.header {
+    height: 95vh;
+    background-image: linear-gradient( 
+        to right bottom, 
+        rgba($color-teriary, 0.80), 
+        rgba($color-primary-dark, 0.80)), 
+    /* url(../assets/videos/teamwork.mp4); */
+    url(https://images.pexels.com/photos/3811082/pexels-photo-3811082.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    background-size: cover;
+    background-position: top;
+    position: relative; 
+
+    /* clockwise using x,y coordinates by percentages (or any other unit) */
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+}
+
+.header__logo {
+    height: 3.5rem;
+}
+
+.header__text-box {
+    position: absolute;
+    /* based on the header (parent element) */
+    top: 40%;
+    left: 50%;
+    /* based on the element itself */
+    transform: translate(-50%, -50%);
+    /* to center the button */
+    text-align: center;
+}
+
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+
+    /* making sure the animation doesn't shake */
+    backface-visibility: hidden;
+    margin-bottom: 6rem;
+}
+
+.heading-primary--main {
+    display: block;
+    font-size: 7rem;
+    font-weight:700;
+    letter-spacing: 3.5rem;
+
+    animation-name: moveInLeft;
+    animation-duration: 3s;
+}
+
+.heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 1.2rem;
+
+    animation-name: moveInRight;
+    animation-duration: 3s;
+}
+
+/* Header Animation */
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        /* animate in the left direction, X moves from left to right */
+        transform: translateX(-10rem);
+    }
+
+    80% {
+        /* add in a little quiver */
+        transform: translateX(1rem);
+    }
+
+    100% {
+        opacity: 1;
+        /* look the way that it does now */
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        /* animate in the right direction */
+        transform: translateX(10rem);
+    }
+
+    80% {
+        /* add in a little quiver */
+        transform: translateX(-1rem);
+    }
+
+    100% {
+        opacity: 1;
+        /* look the way that it does now */
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        /* animate down */
+        transform: translateY(3rem);
+    }
+
+
+    100% {
+        opacity: 1;
+        /* look the way that it does now */
+        transform: translate(0);
+    }
+}
+
+/* pseudo elements for link */
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    /* clockwise: top, right, bottom, left || top&bottom left&right || all */
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    /* making a round button */
+    border-radius: 10rem;
+    transition: all .2s;
+    /* reference for the .btn::after */
+    position: relative;
+}
+
+.btn:hover {
+    /* Y moves from top to bottom */
+    transform: translateY(-3px);
+    /* (x y blur rgba (r g b alpha) - creating a shadow */
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+}
+
+.btn--white {
+    background-color: #fff;
+    color: #404040;
+}
+
+/* creating another button under the main button */
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+    font-size: 1.6rem;
+}
+
+.btn--white::after {
+    background-color: #fff;
+}
+
+/* button should grow */
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    /* trick to fade */
+    opacity: 0;
+}
+
+.btn--animated {
+    animation: moveInBottom .5s ease-out .75s;
+    /* automatically applies the 0% opacity */
+    animation-fill-mode: backwards;
+}
