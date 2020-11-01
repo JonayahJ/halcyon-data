@@ -1,0 +1,30 @@
+{
+  "name": "hdata_web",
+  "version": "1.0.0",
+  "description": "Halcyon Data Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonayahJ/halcyon-data.git"
+  },
+  "keywords": [
+    "data",
+    "analysis",
+    "equity",
+    "visualization",
+    "consultant"
+  ],
+  "author": "Jonayah M. Jackson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonayahJ/halcyon-data/issues"
+  },
+  "homepage": "https://github.com/JonayahJ/halcyon-data#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  }
+}
