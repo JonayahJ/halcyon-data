@@ -1,25 +1,14 @@
-/*
-COLORS:
-
-Matte Dark Blue Grey: #3d5a80 (linear gradient color 2)
-Matte Light Blue Grey: #98c1d9
-Navy Blue/Black: #293241
-Powder Blue: #e0fbfc
-Pumpkin Orange: #ee6c4d (linear gradient color 1)
-
-*/
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
 
 @import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
 
-$color-primary-dark: #3d5a80;
-$color-primary-light: #98c1d9;
-$color-secondary-dark: #293241;
-$color-secondary-light: #e0fbfc;
-$color-teriary: #ee6c4d;
+@import "pages/home";
 
-$color-grey-dark: #404040;
-$color-white: #fff;
-$color-black: #000;
 
 /* Universal Selector */
 *,
