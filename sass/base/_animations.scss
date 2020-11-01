@@ -1,0 +1,53 @@
+/* Header Animation */
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        /* animate in the left direction, X moves from left to right */
+        transform: translateX(-10rem);
+    }
+
+    80% {
+        /* add in a little quiver */
+        transform: translateX(1rem);
+    }
+
+    100% {
+        opacity: 1;
+        /* look the way that it does now */
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        /* animate in the right direction */
+        transform: translateX(10rem);
+    }
+
+    80% {
+        /* add in a little quiver */
+        transform: translateX(-1rem);
+    }
+
+    100% {
+        opacity: 1;
+        /* look the way that it does now */
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        /* animate down */
+        transform: translateY(3rem);
+    }
+
+
+    100% {
+        opacity: 1;
+        /* look the way that it does now */
+        transform: translate(0);
+    }
+}
