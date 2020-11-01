@@ -3,9 +3,9 @@ COLORS:
 
 Matte Dark Blue Grey: #3d5a80 (linear gradient color 2)
 Matte Light Blue Grey: #98c1d9
+Navy Blue/Black: #293241
 Powder Blue: #e0fbfc
 Pumpkin Orange: #ee6c4d (linear gradient color 1)
-Navy Blue/Black: #293241
 
 */
 
@@ -14,6 +14,10 @@ $color-primary-light: #98c1d9;
 $color-secondary-dark: #293241;
 $color-secondary-light: #e0fbfc;
 $color-teriary: #ee6c4d;
+
+$color-grey-dark: #404040;
+$color-white: #fff;
+
 
 
 /* Universal Selector */
@@ -26,7 +30,7 @@ $color-teriary: #ee6c4d;
 }
 
 html {
-    /* font-size: 10px; */
+    /* font-size: 10px based on 16px is 62.5% */
     font-size: 62.5%;
 }
 
@@ -35,7 +39,7 @@ body {
     font-weight: 400;
     font-size: 1.6rem;
     line-height: 1.7;
-    color: #404040;
+    color: $color-grey-dark;
 
     box-sizing: border-box;
 }
@@ -78,7 +82,7 @@ body {
 }
 
 .heading-primary {
-    color: #fff;
+    color: $color-white;
     text-transform: uppercase;
 
     /* making sure the animation doesn't shake */
@@ -188,8 +192,8 @@ body {
 }
 
 .btn--white {
-    background-color: #fff;
-    color: #404040;
+    background-color: $color-white;
+    color: $color-grey-dark;
 }
 
 /* creating another button under the main button */
@@ -208,7 +212,7 @@ body {
 }
 
 .btn--white::after {
-    background-color: #fff;
+    background-color: $color-white;
 }
 
 /* button should grow */
