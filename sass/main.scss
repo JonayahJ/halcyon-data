@@ -17,8 +17,7 @@ $color-teriary: #ee6c4d;
 
 $color-grey-dark: #404040;
 $color-white: #fff;
-
-
+$color-black: #000;
 
 /* Universal Selector */
 *,
@@ -58,28 +57,29 @@ body {
 
     /* clockwise using x,y coordinates by percentages (or any other unit) */
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+    &__logo-box{
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+
+    &__logo {
+        height: 3.5rem;
+    }
+    
+    &__text-box {
+        position: absolute;
+        /* based on the header (parent element) */
+        top: 40%;
+        left: 50%;
+        /* based on the element itself */
+        transform: translate(-50%, -50%);
+        /* to center the button */
+        text-align: center;
+    }
 }
 
-.header__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem;
-}
-
-.header__logo {
-    height: 3.5rem;
-}
-
-.header__text-box {
-    position: absolute;
-    /* based on the header (parent element) */
-    top: 40%;
-    left: 50%;
-    /* based on the element itself */
-    transform: translate(-50%, -50%);
-    /* to center the button */
-    text-align: center;
-}
 
 .heading-primary {
     color: $color-white;
@@ -88,26 +88,26 @@ body {
     /* making sure the animation doesn't shake */
     backface-visibility: hidden;
     margin-bottom: 6rem;
-}
 
-.heading-primary--main {
-    display: block;
-    font-size: 7rem;
-    font-weight:700;
-    letter-spacing: 3.5rem;
-
-    animation-name: moveInLeft;
-    animation-duration: 3s;
-}
-
-.heading-primary--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 400;
-    letter-spacing: 1.2rem;
-
-    animation-name: moveInRight;
-    animation-duration: 3s;
+    &--main {
+        display: block;
+        font-size: 7rem;
+        font-weight:700;
+        letter-spacing: 3.5rem;
+    
+        animation-name: moveInLeft;
+        animation-duration: 3s;
+    }
+    
+    &--sub {
+        display: block;
+        font-size: 2rem;
+        font-weight: 400;
+        letter-spacing: 1.2rem;
+    
+        animation-name: moveInRight;
+        animation-duration: 3s;
+    }
 }
 
 /* Header Animation */
@@ -165,65 +165,69 @@ body {
 }
 
 /* pseudo elements for link */
-.btn:link,
-.btn:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    /* clockwise: top, right, bottom, left || top&bottom left&right || all */
-    padding: 1.5rem 4rem;
-    display: inline-block;
-    /* making a round button */
-    border-radius: 10rem;
-    transition: all .2s;
-    /* reference for the .btn::after */
-    position: relative;
+.btn {
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        /* clockwise: top, right, bottom, left || top&bottom left&right || all */
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        /* making a round button */
+        border-radius: 10rem;
+        transition: all .2s;
+        /* reference for the .btn::after */
+        position: relative;
+    }
+
+    &:hover {
+        /* Y moves from top to bottom */
+        transform: translateY(-3px);
+        /* (x y blur rgba (r g b alpha) - creating a shadow */
+        box-shadow: 0 1rem 2rem rgba($color-black .2);
+    }
+    
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 .5rem 1rem rgba($color-black .2);
+    }
+    
+    &--white {
+        background-color: $color-white;
+        color: $color-grey-dark;
+    }
+    
+    /* creating another button under the main button */
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+        font-size: 1.6rem;
+    }
+    
+    &--white::after {
+        background-color: $color-white;
+    }
+    
+    /* button should grow */
+    &:hover::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        /* trick to fade */
+        opacity: 0;
+    }
+    
+    &--animated {
+        animation: moveInBottom .5s ease-out .75s;
+        /* automatically applies the 0% opacity */
+        animation-fill-mode: backwards;
+    }
+
 }
 
-.btn:hover {
-    /* Y moves from top to bottom */
-    transform: translateY(-3px);
-    /* (x y blur rgba (r g b alpha) - creating a shadow */
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
-}
-
-.btn:active {
-    transform: translateY(-1px);
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
-}
-
-.btn--white {
-    background-color: $color-white;
-    color: $color-grey-dark;
-}
-
-/* creating another button under the main button */
-.btn::after {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 10rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all .4s;
-    font-size: 1.6rem;
-}
-
-.btn--white::after {
-    background-color: $color-white;
-}
-
-/* button should grow */
-.btn:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    /* trick to fade */
-    opacity: 0;
-}
-
-.btn--animated {
-    animation: moveInBottom .5s ease-out .75s;
-    /* automatically applies the 0% opacity */
-    animation-fill-mode: backwards;
-}
