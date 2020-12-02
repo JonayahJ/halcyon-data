@@ -34,3 +34,21 @@ body {
         animation-duration: 3s;
     }
 }
+
+.heading-secondary {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+    background-image: linear-gradient(to right, $color-tertiary, $color-primary-dark);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 2px;
+    transition: all .2s;
+
+    &:hover {
+        transform: skewY(5deg);
+        text-shadow: .5rem 1rem 2rem rgba($color-black, .2); // x y blur color
+    }
+}
