@@ -8,76 +8,6 @@ Powder Blue: #e0fbfc
 Pumpkin Orange: #ee6c4d (linear gradient color 1)
 
 */
-/* Universal Selector */
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit; }
-
-html {
-  /* font-size: 10px based on 16px is 62.5% */
-  font-size: 62.5%; }
-
-body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  font-size: 1.6rem;
-  line-height: 1.7;
-  color: #404040;
-  box-sizing: border-box; }
-
-.header {
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(238, 108, 77, 0.8), rgba(61, 90, 128, 0.8)), url(https://images.pexels.com/photos/3811082/pexels-photo-3811082.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
-  background-size: cover;
-  background-position: top;
-  position: relative;
-  /* clockwise using x,y coordinates by percentages (or any other unit) */
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
-
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem; }
-
-.header__logo {
-  height: 3.5rem; }
-
-.header__text-box {
-  position: absolute;
-  /* based on the header (parent element) */
-  top: 40%;
-  left: 50%;
-  /* based on the element itself */
-  transform: translate(-50%, -50%);
-  /* to center the button */
-  text-align: center; }
-
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  /* making sure the animation doesn't shake */
-  backface-visibility: hidden;
-  margin-bottom: 6rem; }
-
-.heading-primary--main {
-  display: block;
-  font-size: 7rem;
-  font-weight: 700;
-  letter-spacing: 3.5rem;
-  animation-name: moveInLeft;
-  animation-duration: 3s; }
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 400;
-  letter-spacing: 1.2rem;
-  animation-name: moveInRight;
-  animation-duration: 3s; }
-
 /* Header Animation */
 @keyframes moveInLeft {
   0% {
@@ -115,58 +45,145 @@ body {
     /* look the way that it does now */
     transform: translate(0); } }
 
-/* pseudo elements for link */
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  /* clockwise: top, right, bottom, left || top&bottom left&right || all */
-  padding: 1.5rem 4rem;
-  display: inline-block;
-  /* making a round button */
-  border-radius: 10rem;
-  transition: all .2s;
-  /* reference for the .btn::after */
-  position: relative; }
-
-.btn:hover {
-  /* Y moves from top to bottom */
-  transform: translateY(-3px);
-  /* (x y blur rgba (r g b alpha) - creating a shadow */
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
-
-.btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
-
-.btn--white {
-  background-color: #fff;
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
   color: #404040; }
 
-/* creating another button under the main button */
-.btn::after {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 10rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all .4s;
-  font-size: 1.6rem; }
+.heading-primary {
+  color: white;
+  text-transform: uppercase;
+  /* making sure the animation doesn't shake */
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    font-size: 7rem;
+    font-weight: 700;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 3s; }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 1.2rem;
+    animation-name: moveInRight;
+    animation-duration: 3s; }
 
-.btn--white::after {
-  background-color: #fff; }
+/* pseudo elements for link */
+.btn {
+  /* creating another button under the main button */
+  /* button should grow */ }
+  .btn:link, .btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    /* clockwise: top, right, bottom, left || top&bottom left&right || all */
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    /* making a round button */
+    border-radius: 10rem;
+    transition: all .2s;
+    /* reference for the .btn::after */
+    position: relative; }
+  .btn:hover {
+    /* Y moves from top to bottom */
+    transform: translateY(-3px);
+    /* (x y blur rgba (r g b alpha) - creating a shadow */
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  .btn--white {
+    background-color: white;
+    color: #404040; }
+  .btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+    font-size: 1.6rem; }
+  .btn--white::after {
+    background-color: white; }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    /* trick to fade */
+    opacity: 0; }
+  .btn--animated {
+    animation: moveInBottom .5s ease-out .75s;
+    /* automatically applies the 0% opacity */
+    animation-fill-mode: backwards; }
 
-/* button should grow */
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  /* trick to fade */
-  opacity: 0; }
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(238, 108, 77, 0.8), rgba(61, 90, 127, 0.8)), url(https://images.pexels.com/photos/3811082/pexels-photo-3811082.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  /* clockwise using x,y coordinates by percentages (or any other unit) */
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    /* based on the header (parent element) */
+    top: 40%;
+    left: 50%;
+    /* based on the element itself */
+    transform: translate(-50%, -50%);
+    /* to center the button */
+    text-align: center; }
 
-.btn--animated {
-  animation: moveInBottom .5s ease-out .75s;
-  /* automatically applies the 0% opacity */
-  animation-fill-mode: backwards; }
+.row {
+  max-width: 114rem;
+  background-color: #eee;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 80px; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    background-color: orangered;
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 60px; }
+  .row .col-1-of-2 {
+    width: calc((100% - 60px) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 60px) / 3); }
+  .row .col-2-of-3 {
+    width: calc(2 * ((100% - 2 * 60px) / 3) + 60px); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 60px) / 4); }
+  .row .col-2-of-4 {
+    width: calc(2 * ((100% - 3 * 60px) / 4) + 60px); }
+  .row .col-3-of-4 {
+    width: calc(3 * ((100% - 3 * 60px) / 4) + 2 * (60px)); }
+
+/* Universal Selector */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box; }

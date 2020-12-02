@@ -18,12 +18,12 @@
         /* Y moves from top to bottom */
         transform: translateY(-3px);
         /* (x y blur rgba (r g b alpha) - creating a shadow */
-        box-shadow: 0 1rem 2rem rgba($color-black .2);
+        box-shadow: 0 1rem 2rem rgba($color-black, .2);
     }
     
     &:active {
         transform: translateY(-1px);
-        box-shadow: 0 .5rem 1rem rgba($color-black .2);
+        box-shadow: 0 .5rem 1rem rgba($color-black, .2);
     }
     
     &--white {
