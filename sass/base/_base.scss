@@ -1,0 +1,18 @@
+/* Universal Selector */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    // font-size: 10px based on 16px is 62.5%
+    // This defines what 1rem is (global setting)
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+}

@@ -1,6 +1,5 @@
 .row {
     max-width: $grid-width;
-    background-color: #eee;
     margin: 0 auto; // centers block elements within another block
 
     &:not(:last-child){ // select everything except the last child
@@ -10,7 +9,6 @@
     @include clearfix; // clearing the floats
 
     [class^="col-"] { // attribute selector: selects all of the classes that begin with "col-" (* = contain, $= ends)
-        background-color: orangered;
         float: left;
         
         // always want a right gutter on all but the last
