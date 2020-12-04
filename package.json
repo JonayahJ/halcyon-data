@@ -23,9 +23,7 @@
     "url": "https://github.com/JonayahJ/halcyon-data/issues"
   },
   "homepage": "https://github.com/JonayahJ/halcyon-data#readme",
-  "dependencies": {
-    "font-awesome": "^4.7.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "node-sass": "^5.0.0"
   }
