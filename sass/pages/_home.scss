@@ -3,3 +3,22 @@
     padding: 25rem 0;
     margin-top: -15vh; // closing the gap between the top polygon and the following section
 }
+
+.section-features {
+    padding: 20rem 0;
+    background-image: linear-gradient( 
+        to right bottom, 
+        rgba($color-tertiary, 0.80), 
+        rgba($color-primary-dark, 0.80)), 
+    /* url(../assets/videos/teamwork.mp4); */
+    url(https://images.pexels.com/photos/3811082/pexels-photo-3811082.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    background-size: cover;
+    transform: skewY(-5deg);
+    margin-top: -12rem;
+
+    // select direct child
+    & > * {
+        transform: skewY(5deg);
+
+    }
+}
