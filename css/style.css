@@ -112,7 +112,13 @@ body {
 .u-center-text {
   text-align: center; }
 
-.u-margin-bottom-big {
+.u-margin-bottom-2xl {
+  margin-bottom: 16rem; }
+
+.u-margin-bottom-xl {
+  margin-bottom: 12rem; }
+
+.u-margin-bottom-large {
   margin-bottom: 8rem; }
 
 .u-margin-bottom-medium {
