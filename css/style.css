@@ -203,7 +203,6 @@ body {
   height: 50rem; }
   .card__side {
     background-color: white;
-    color: #404040;
     font-size: 2rem;
     height: 50rem;
     transition: all 1.2s ease;
@@ -235,13 +234,25 @@ body {
   .card__picture {
     background-size: cover;
     height: 23rem;
-    background-blend-mode: hard-light; }
+    background-blend-mode: hard-light;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
     .card__picture--1 {
       background-image: linear-gradient(to right bottom, rgba(238, 108, 77, 0.75), rgba(61, 90, 127, 0.75)), url(https://images.pexels.com/photos/5211427/pexels-photo-5211427.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260); }
     .card__picture--2 {
       background-image: linear-gradient(to right bottom, rgba(238, 108, 77, 0.75), rgba(61, 90, 127, 0.75)), url(https://images.pexels.com/photos/5896522/pexels-photo-5896522.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260); }
     .card__picture--3 {
       background-image: linear-gradient(to right bottom, rgba(238, 108, 77, 0.75), rgba(61, 90, 127, 0.75)), url(https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260); }
+  .card__heading {
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    position: absolute;
+    top: 15rem;
+    left: 50%;
+    transform: translate(-50%, -50%); }
 
 .composition {
   position: relative; }
@@ -295,6 +306,7 @@ body {
   background-position: top;
   position: relative;
   /* clockwise using x,y coordinates by percentages (or any other unit) */
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
   .header__logo-box {
     position: absolute;
