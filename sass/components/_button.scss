@@ -68,8 +68,8 @@
 .btn-primary {
     &:link,
     &:visited {
-        color: $color-secondary-dark;
-        background-color: $color-primary-light;
+        color: $color-white;
+        background-color: $color-tertiary-2;
         text-decoration: none;
         padding: 1rem 3rem;
         display: inline-block;
@@ -80,7 +80,7 @@
 
     &:hover {
         color: $color-white;
-        background-color: $color-primary-dark;
+        background-color: $color-tertiary;
         transform: translateY(-3px);
         box-shadow: 0 1rem 2rem rgba($color-black, .2);
     }

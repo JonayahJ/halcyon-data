@@ -11,13 +11,14 @@
         font-size: 2rem;
 
         height: 50rem;
-        transition: all .8s ease; // animate the hover transform
+        transition: all 1.2s ease; // animate the hover transform
         position: absolute; // base the child on the parent's position
         top: 0;
         left: 0;
         width: 100%;
         backface-visibility: hidden; // hides the back side of an element
         border-radius: 3px;
+        overflow: hidden;
         box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
 
         &--front {
@@ -25,7 +26,7 @@
         }
 
         &--back {
-            transform: rotateY(180deg); // needs to start at 180deg
+            transform: rotateY(-180deg); // needs to start at -180deg
 
             &-1 {
                 background-image: linear-gradient( 
@@ -55,10 +56,43 @@
 
     // rotate across the y axis 180 deg to turn over a card
     &:hover &__side--front {
-        transform: rotateY(180deg);
+        transform: rotateY(-180deg);
     }
 
     &:hover &__side--back {
         transform: rotateY(0deg); // return to 0deg
     }
+
+    // front side styling
+    &__picture {
+        background-size: cover;
+        height: 23rem;
+        background-blend-mode: hard-light;
+
+        &--1 {
+            background-image: linear-gradient( 
+                to right bottom, 
+                rgba($color-tertiary, 0.75), 
+                rgba($color-primary-dark, 0.75)), 
+                url(https://images.pexels.com/photos/5211427/pexels-photo-5211427.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+        }
+    
+
+        &--2 {
+            background-image: linear-gradient( 
+                to right bottom, 
+                rgba($color-tertiary, 0.75), 
+                rgba($color-primary-dark, 0.75)),  
+                url(https://images.pexels.com/photos/5896522/pexels-photo-5896522.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);    
+            }        
+
+        &--3 {
+            background-image: linear-gradient( 
+                to right bottom, 
+                rgba($color-tertiary, 0.75), 
+                rgba($color-primary-dark, 0.75)), 
+                url(https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+        }
+    }
+        
 }
