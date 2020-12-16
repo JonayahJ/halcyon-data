@@ -30,6 +30,19 @@
     &--white {
         background-color: $color-white;
         color: $color-grey-dark;
+
+        &::after{
+            background-color: $color-white;
+        }
+    }
+    
+    &--primary {
+        background-color: $color-primary-dark;
+        color: $color-white;
+
+        &::after{
+            background-color: $color-primary-dark;
+        }
     }
     
     /* creating another button under the main button */
@@ -65,7 +78,7 @@
     }
 }
 
-.btn-primary {
+.btn-tertiary {
     &:link,
     &:visited {
         color: $color-white;
